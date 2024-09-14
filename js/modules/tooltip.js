@@ -16,9 +16,11 @@ export default function initTooltip() {
       onMouseLeave.element = this;
       this.addEventListener('mouseleave', onMouseLeave);
     }
-  
+    /*
+        OBS:  Quando transformar a função callback em objeto, deve ser utilizado obrigatóriamente a função handleEvent() para o objeto de callback ser utilizado como função de 
+    */
     const onMouseLeave = {
-      handleEvent() {
+      handleEvent() { 
         this.tooltipBox.remove();
         this.element.removeEventListener('mouseleave', onMouseLeave);
         this.element.removeEventListener('mousemove', onMouseMove);
